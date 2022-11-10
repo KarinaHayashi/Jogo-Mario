@@ -45,11 +45,11 @@ const loop = setInterval(() => {
 
     document.getElementById('theme').pause();
     document.getElementById('gameOver').play();
-    mario.src = './imagens/game-over.png';
+    mario.src = '/imagens/marioGameOver.png';
     mario.style.width = '75px';
     mario.style.marginLeft = '50px';
 
-    startGame.src = './imagens/Over.png';
+    startGame.src = '/imagens/Over.png';
 
     clearInterval(loop); //para o loop
 
@@ -71,7 +71,7 @@ const loop = setInterval(() => {
 
       document.getElementById('theme').pause();
       document.getElementById('gameOver').play();
-      mario.src = './imagens/marioGameOver.png'
+      mario.src = '/imagens/marioGameOver.png'
       mario.style.width = '75px';
       mario.style.marginLeft = '80px';
 
