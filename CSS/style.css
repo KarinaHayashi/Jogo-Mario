@@ -1,81 +1,146 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.game-board{
+.game-board {
     width: 100%;
     height: 500px;
     border-bottom: 30px solid rgb(35, 160, 35);
-    margin:auto;
+    margin: auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe{
+
+.start-game {
+    position: fixed;
+    top: 80%;
+    width: 15%;
+}
+
+#footer {
+    top: 20%;
+    text-align: center;
+    margin-left: -12%;
+    left: 30%;
+
+}
+
+.score {
     position: absolute;
-    bottom:0 ;
+    text-align: center;
+    top: 89%;
+    left: 10%;
+}
+
+#score {
+    position: relative;
+    text-align: center;
+    top: -20%;
+    max-width: max-content;
+    left: 150%;
+    font: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.score-amount {
+    left: 144px;
+    position: absolute;
+    top: 29%;
+    font-size: x-large;
+}
+
+
+
+.pipe {
+    position: absolute;
+    bottom: 0;
     width: 80px;
     animation: pipe-animation 1.5s infinite linear;
 }
 
-.mario{
+.mario {
     width: 160px;
     position: absolute;
-    bottom:0;
-    
+    bottom: 0;
+
 }
 
 .jump {
     animation: jump 500ms ease-out;
 }
 
-.clouds{
+.clouds {
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
 }
 
-@keyframes pipe-animation{
+
+.bullet {
+    position: absolute;
+    bottom: 0x;
+    top: 60%;
+    width: 190px;
+    animation: bullet-animation 933ms infinite linear;
+}
+
+
+
+
+@keyframes pipe-animation {
     from {
-        right:-80px;
+        right: -80px;
     }
 
-    to{
+    to {
         right: 100%
     }
 }
 
-@keyframes jump{
+@keyframes jump {
     0% {
-        bottom:0;
+        bottom: 0;
     }
 
     40% {
-        bottom:180px;
+        bottom: 180px;
     }
 
     50% {
-        bottom:180px;
+        bottom: 180px;
     }
 
     60% {
-        bottom:180px;
+        bottom: 180px;
     }
 
     100% {
-        bottom:0;
+        bottom: 0;
     }
 }
 
-@keyframes clouds-animation{
-    from{
-        right:-550px;
+@keyframes clouds-animation {
+    from {
+        right: -550px;
     }
 
-    to{
+    to {
+        right: 100%;
+    }
+
+}
+
+@keyframes bullet-animation {
+    from {
+        right: -20px;
+    }
+
+    to {
         right: 100%;
     }
 
