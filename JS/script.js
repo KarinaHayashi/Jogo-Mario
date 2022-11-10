@@ -1,4 +1,3 @@
-
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const bullet = document.querySelector('.bullet');
@@ -7,21 +6,19 @@ var cont = document.querySelector('.score-amount');
 
 var soma = Number(cont.textContent)
 
-
+//funcao de evento do pulo
 const jump = () => {
   mario.classList.add('jump');
 
   soma += 1
   cont.textContent = soma
 
-
+  document.getElementById('theme').play();
+  document.getElementById('jump').play();
   setTimeout(() => {
-
     mario.classList.remove('jump');
-
   }, 500);
 }
-
 
 
 //funcao do evento dos obstaculos
@@ -40,14 +37,14 @@ const loop = setInterval(() => {
     pipe.style.left = `${pipePosition}px`;
     bullet.style.left = `${bulletPosition}px`;
 
-    mario.style.animation = 'none'; //remove a animacao do mario
+    mario.style.animation = 'none';
     mario.style.bottom = `${marioPosition}px`;
 
     document.getElementById('theme').pause();
     document.getElementById('gameOver').play();
     mario.src = '/imagens/marioGameOver.png';
     mario.style.width = '75px';
-    mario.style.marginLeft = '50px';
+    mario.style.marginLeft = '80px';
 
     startGame.src = '/imagens/Over.png';
 
@@ -55,7 +52,7 @@ const loop = setInterval(() => {
 
     document.addEventListener('keydown', () => {
       location.reload();
-    })
+    });
 
     if (bulletPosition <= 120 && bulletPosition > 0 && marioPosition < 80) {
 
@@ -71,17 +68,24 @@ const loop = setInterval(() => {
 
       document.getElementById('theme').pause();
       document.getElementById('gameOver').play();
-      mario.src = '/imagens/marioGameOver.png'
+      mario.src = '/imagens/marioGameOver.png';
       mario.style.width = '75px';
       mario.style.marginLeft = '80px';
 
       startGame.src = './imagens/Over.png';
 
+      clearInterval(loop);
+
+      document.addEventListener('keydown',()=> {
+        location.reload();
+      })};
+
+
+
+
+
     }
-
-
-  }
-}, 10);
+  }, 10);
 
 
 document.addEventListener('keydown', jump);
